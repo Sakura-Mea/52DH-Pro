@@ -174,7 +174,7 @@ https://github.com/Crogram/SiteHub
 
 
 #### 🥳 联系我们
-[博客地址：](https://www.sukuy.com/)
+博客地址：https://www.sukuy.com
 
 QQ交流群：884250547
 
