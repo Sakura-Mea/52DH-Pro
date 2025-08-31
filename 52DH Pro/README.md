@@ -1,51 +1,28 @@
+# 52DH Pro
 
-我爱导航（52DH Pro）是基于Github项目：https://github.com/Crogram/SiteHub 二次开发而来
+#### ✨ 介绍
+我爱导航系统(52DH Pro网址导航系统)是基于SiteHub二次开发的开源免费的网址导航系统，拥有独立前台和拟态风格的后台管理中心。
+我爱导航系统(52DH Pro网址导航系统)集合网上优质网站网址导航，支持前台自主提交收录、自动获取TDK与网站Icon与后端审核管理，涵盖网站收录和文章发布等。
 
-
-后台功能：
-
-支持修改网站信息
-支持修改管理员信息
-支持修改网站素材，如 logo/favicon 图标/微信二维码 等图片
-支持添加/修改/删除导航
-支持添加/修改/删除分类
-支持添加/修改/删除站点
-支持审核/删除/拒绝站点申请
-支持发布/修改/删除公告
-支持添加/修改/删除友情链接
-前台特色：
-
-所有分类下的站点
-单个分类下的站点
-各站点详情页
-分类滚动定位
-记录各站点浏览数
-点赞功能（单个 IP 单个站点只能点赞一次）
-站点详情页显示站点缩略图
-站点炫酷跳转页
-右下角悬浮按扭（去顶部/QQ/邮箱/微信二维码）
-搜索功能（支持搜索站点名称/站点链接/站点简介）
-访客申请站点收录功能
-关于我们页面
-站点图片懒加载
-分类/站点链接别名
-网站 Favicon 图标接口缓存
+#### 📌 部署环境
 运行环境
-Nginx/Apache、PHP 5.4+、MySQL 5.6+
+Nginx/Apache、PHP建议7.4、MySQL 5.6+
 
-部署方法
-将 src 目录内文件全部上传到网站运行目录
-访问网址 http://你的网站地址/install/
+
+#### 💡 安装教程
+
+将52DH Pro压缩包上传到网站运行目录
+访问域名安装
 按照页面引导，输入数据库帐号及密码信息，提交安装
-默认后台地址：http://你的网站地址/admin/ 默认账号：admin，默认密码：123456
-然后服务器设置好伪静态规则
-访问网站 OK
+默认后台地址：http://域名/admin/
+默认账号：admin，默认密码：123456
+配置伪静态规则
 
+#### 📙 伪静态规则
 
-伪静态配置规则：
-Nginx 伪静态规则
+Nginx伪静态规则
 
-
+```
 rewrite ^/index.html$ /index.php last;
 rewrite ^/about.html$ /about.php last;
 rewrite ^/search.html$ /search.php last;
@@ -70,11 +47,11 @@ location ~ "^/img/preview/([^/]+)/?.png$" {
  try_files /$uri /$uri/ /preview.php?url=$1;
 }
 
+```
 
+Apache伪静态规则
 
-
-Apache 伪静态规则
-
+```
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index.html index.php [L,NC]
@@ -91,12 +68,11 @@ RewriteRule ^article-list-([0-9]+).html article_list.php?id=$1 [L,NC]
 RewriteRule ^article-([0-9]+).html article_show.php?id=$1 [L,NC]
 RewriteRule ^img/favicon/(.*)\.png$ favicon.php?url=$1 [L,NC]
 RewriteRule ^img/preview/(.*)\.png$ preview.php?url=$1 [L,NC]
+```
 
+IIS伪静态规则
 
-
-
-IIS 伪静态规则
-
+```
 <rewrite>
     <rules>
         <rule name="Imported Rule 1">
@@ -149,3 +125,74 @@ IIS 伪静态规则
         </rule>
     </rules>
 </rewrite>
+
+```
+
+#### 🚀 系统预览
+![系统安装页](52DH%20Pro%2006.png)
+
+![首页](52DH%20Pro%2001.png)
+
+![后台登录页](52DH%20Pro%2002.png)
+
+![后台管理页](52DH%20Pro%2003.png)
+
+![提交收录页](52DH%20Pro%2005.png)
+
+
+#### 🏄🏻‍♂️ 更新历程
+
+```
+V1.1.1
+1.优化安装页面UI
+2.美化后台界面UI为拟态风格
+3.新增收录界面TDK信息获取和网站展示
+
+V1.0.0
+1. 所有分类下的站点
+2. 单个分类下的站点
+3. 各站点详情页
+4. 分类滚动定位
+5. 记录各站点浏览数
+6. 点赞功能（单个 IP 单个站点只能点赞一次）
+7. 站点详情页显示站点缩略图
+8. 站点炫酷跳转页
+9. 右下角悬浮按扭（去顶部/QQ/邮箱/微信二维码）
+10. 搜索功能（支持搜索站点名称/站点链接/站点简介）
+11. 访客申请站点收录功能
+12. 关于我们页面
+13. 站点图片懒加载
+14. 分类/站点链接别名
+15. 网站 Favicon 图标接口缓存
+```
+
+
+#### 原项目地址
+https://github.com/Crogram/SiteHub
+
+
+#### 🥳 联系我们
+[博客地址：](https://www.sukuy.com/)
+
+QQ交流群：884250547
+
+#### ❌ 声明
+1.本程序仅供个人合法用途使用与研究，切勿用于违反法律法规的场景.
+2.由此造成的一切后果由使用者承担，系统维护方不为使用者承担任何责任.
+
+#### 参与贡献
+
+1.  Fork 本仓库
+2.  新建 Feat_xxx 分支
+3.  提交代码
+4.  新建 Pull Request
+
+
+#### 特技
+
+1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
+2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
+3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
+4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
+5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
+6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
